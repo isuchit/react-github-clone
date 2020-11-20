@@ -1,0 +1,7 @@
+.app__home {
+    display: flex;
+}
+
+.app {
+    display: grid;
+  }
