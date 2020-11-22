@@ -10,7 +10,7 @@ function Header() {
         <div className="header">
             <div className="header__left">
             <img className="header__logo" src="/GitHub-Mark-Light-32px.png" alt="" />
-            
+     
             <div className="header__search">
                 <input type="text" placeholder="Search or jump to..." className="header__searchInput" />             
             </div>

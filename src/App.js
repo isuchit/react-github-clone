@@ -8,6 +8,7 @@ import Header from './Header';
 import Sidebar from './Sidebar'
 import Home from './Home';
 import Login from './Login'
+import Footer from './Footer'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 function Copyright() {
@@ -27,24 +28,20 @@ export default function App() {
   return (
     <div className="app">
       <Router >
-      <Header />
-              <Switch>
-                <Route path="/login">
-                  <Login />
-                </Route>
-                <Route path="/">
-                  <div className="app__home">
-                    <Sidebar />
-                    <Home />  
-                  </div>
-                </Route>
-              </Switch>
-            </Router>
-             {/* <Header />
-             <div className="home">
-                    <Sidebar />
-                    <Home />  
-                  </div> */}
-   </div>
+        <Header />
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/">
+            <div className="app__home">
+              <Sidebar />
+              <Home />
+            </div>
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </div>
   );
 }

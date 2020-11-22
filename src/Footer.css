@@ -1,0 +1,37 @@
+.footer {
+   margin-left: 50px;
+    margin-right: 50px ;
+}
+
+.footer > hr {
+    color: rgb(88, 82, 82);
+}
+
+.footer__list {
+    display: flex;
+    color: darkgrey;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9.5px;
+}
+
+hr.light {
+    border-top: 1px rgb(235, 231, 231)
+  }
+
+a:link {
+    text-decoration: none;
+  }
+  
+a:visited {
+    text-decoration: none;
+  }
+  
+a:hover {
+    text-decoration: underline;
+  }
+  
+a:active {
+    text-decoration: underline;
+  }
