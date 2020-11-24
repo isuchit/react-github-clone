@@ -6,7 +6,9 @@ import PropTypes from 'prop-types';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import MenuBookTwoToneIcon from '@material-ui/icons/MenuBookTwoTone';
+import Overview from './Overview'
+import Repositories from './Repositories'
+
 
 const AntTabs = withStyles({
     root: {
@@ -100,23 +102,23 @@ function Home() {
 
     return (
         <div className="home">
-            <AntTabs value={value} onChange={handleChange} aria-label="ant example">
+            <AntTabs className="home__nav" value={value} onChange={handleChange} aria-label="ant example">
             <AntTab value="one" label="Overview" {...a11yProps('one')} />
-            <AntTab value="two" label="Repositories 16" {...a11yProps('two')} />
+            <AntTab value="two" label="Repositories" {...a11yProps('two')} />
             <AntTab value="three" label="Projects" {...a11yProps('three')} />
             <AntTab value="four" label="Packages" {...a11yProps('three')} />
             </AntTabs>
             <TabPanel value={value} index="one" >
-                Item One
+               <Overview />
             </TabPanel>
             <TabPanel value={value} index="two" >
-                Item Two
+                <Repositories />
             </TabPanel>
             <TabPanel value={value} index="three" >
-                Item Three
+                <h2>Work in Progress...</h2>
             </TabPanel>
             <TabPanel value={value} index="four" >
-                Item Four
+            <h2>Work in Progress...</h2>
             </TabPanel>
         </div>
 

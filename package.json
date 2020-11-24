@@ -13,8 +13,11 @@
     "@emotion/styled": "latest",
     "@material-ui/core": "next",
     "@material-ui/icons": "next",
+    "axios": "^0.21.0",
+    "moment": "^2.29.1",
     "react": "latest",
     "react-dom": "latest",
+    "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "latest"
   },

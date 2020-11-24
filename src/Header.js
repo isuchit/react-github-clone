@@ -4,8 +4,12 @@ import './Header.css'
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import AddSharpIcon from '@material-ui/icons/AddSharp';
 import ArrowDropDownSharpIcon from '@material-ui/icons/ArrowDropDownSharp';
+import { useStateValue } from './StateProvider';
 
 function Header() {
+
+    const [{ userDetails }, dispatch] = useStateValue();
+
     return (
         <div className="header">
             <div className="header__left">
@@ -23,7 +27,7 @@ function Header() {
                 <NotificationsNoneIcon className="header__icon"/>
                 <AddSharpIcon className="header__icon" />
                 <ArrowDropDownSharpIcon className="header__icon"/>
-                <img alt="@isuchit" width="20" height="20" src="https://avatars2.githubusercontent.com/u/26110025?s=60&amp;v=4" class="avatar"></img>
+                <img alt="@isuchit" width="20" height="20" src={userDetails.avatar_url} class="avatar"></img>
                 <ArrowDropDownSharpIcon className="header__icon"/>
             </div>
         </div>

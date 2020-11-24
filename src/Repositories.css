@@ -1,0 +1,46 @@
+.repositories {
+    margin-right: 100px;
+}
+
+hr.light {
+    border-top: 1px rgb(235, 231, 231)
+}
+
+.repositories__repo {
+    margin-top: 20px;
+}
+
+.repositories__repoHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.repositories__repoHeaderButton {
+    font-size: 10px !important;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid !important;
+    border-color: lightgrey !important;
+    border-radius: 5px !important;
+    text-transform: inherit !important;
+    padding: 10px !important;
+}
+
+.icons {
+    color: rgb(106,115,125);
+    height: 18px !important;
+}
+
+.repositories__repoDes {
+    font-size: 12px;
+    max-width: 400px;
+    min-width: 100px;
+}
+.repositories__repoStat {
+    display: inline-block;
+    font-size: 9.5px;
+    margin: 10px 0;
+}

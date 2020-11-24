@@ -1,46 +1,62 @@
-import React from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Link from '@material-ui/core/Link';
-import ProTip from './ProTip';
+import React, { useEffect } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar'
 import Home from './Home';
 import Login from './Login'
 import Footer from './Footer'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import './App.css'
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { useStateValue } from './StateProvider';
+import axios from 'axios';
 
 export default function App() {
+
+  const [{ user, userDetails }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    const getUserDetails = async () => {
+      let baseURL = `https://api.github.com/users/${user}`
+      let response = await axios.get(`${baseURL}`)
+      dispatch({
+        type: 'SET_USER_DETAILS',
+        userDetails: response.data
+      })
+  }
+  if(user != null){
+    getUserDetails()
+  }
+  }, [user])
+
+  useEffect(() => {
+    const getUserRepos = async () => {
+      let response = await axios.get(`${userDetails.repos_url}`)
+      dispatch({
+        type: 'SET_USER_REPO',
+        userRepos: response.data
+      })
+  }
+  if(userDetails != 0){
+    getUserRepos()
+  }
+  }, [userDetails])
+
   return (
     <div className="app">
-      <Router >
-        <Header />
+      <Router >     
         <Switch>
           <Route path="/login">
             <Login />
           </Route>
           <Route path="/">
+          <Header />
             <div className="app__home">
               <Sidebar />
               <Home />
             </div>
+            <Footer />
           </Route>
         </Switch>
-        <Footer />
+        <Redirect to="/login" />
       </Router>
     </div>
   );

@@ -1,0 +1,13 @@
+.overview {
+    margin-right: 100px;
+}
+
+.overview__intro {
+    padding: 15px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.overview__p {
+    font-size: 10px;
+}
